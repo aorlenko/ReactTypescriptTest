@@ -1,0 +1,14 @@
+{
+  "type": "grid",
+  "dataSource": {
+    "url": "http://localhost:3798/api/Products",
+    "objectProperties": [ "ProductName", "ProductPrice", "InStock" ]
+  },
+  "features": {
+    "pagination": {
+      "allowed": true,
+      "itemsPerPage": 10
+    },
+    "refresh": true
+  }
+}

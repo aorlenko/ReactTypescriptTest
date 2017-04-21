@@ -7,8 +7,6 @@ export interface HelloProps { compiler: string; framework: string; }
 export class Hello extends React.Component<HelloProps, undefined> {
     constructor() {
         super();
-        debugger;
-        alert('');
     }
 
     render() {
