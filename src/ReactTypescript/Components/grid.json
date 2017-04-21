@@ -4,11 +4,20 @@
     "url": "http://localhost:3798/api/Products",
     "objectProperties": [ "ProductName", "ProductPrice", "InStock" ]
   },
-  "features": {
-    "pagination": {
-      "allowed": true,
-      "itemsPerPage": 10
-    },
-    "refresh": true
+  "position": {
+    "height": 600
+  },
+  "generalFeatures": {
+    "manualRefresh": true,
+    "autoRefresh": true,
+    "fullScreen": false
+  },
+  "specialFeatures": {
+  },
+  "defaultSettings": {
+    "autoRefresh": {
+      "enabled": true,
+      "interval": 10
+    }
   }
 }

@@ -12,7 +12,7 @@ namespace ReactTypescript.Controllers.Api
     public class ProductsController : Controller
     {
         [HttpGet]
-        public IEnumerable<Product> GetProducts(ProductsRequest request)
+        public IEnumerable<Product> GetProducts()
         {
             var products = new List<Product>()
             {
@@ -23,9 +23,7 @@ namespace ReactTypescript.Controllers.Api
                 new Product("Motorola Razr", 255, true),
             };
 
-            return products
-                .Skip(request.PageNumber * request.PageSize)
-                .Take(request.PageSize);
+            return products;
         }
     }
 }
