@@ -3,3 +3,6 @@
 ################################################################################
 
 /src/ReactTypescript/bin/Debug
+/src/ReactTypescript/obj/Debug
+/src/ReactTypescript/node_modules
+/src/ReactTypescript/wwwroot/dist
