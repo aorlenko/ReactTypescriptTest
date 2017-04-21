@@ -6,3 +6,5 @@
 /src/ReactTypescript/obj/Debug
 /src/ReactTypescript/node_modules
 /src/ReactTypescript/wwwroot/dist
+/src/ReactTypescript/wwwroot/app/bundle.js.map
+/src/ReactTypescript/wwwroot/app/bundle.js
