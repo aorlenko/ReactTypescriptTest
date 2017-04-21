@@ -1,6 +1,6 @@
 ﻿import * as React from "react";
 
-export class Main extends React.Component {
+export class Main extends React.Component<undefined, undefined>{
     constructor() {
         super();
     }

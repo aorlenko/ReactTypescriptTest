@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "outDir": "./wwwroot/dist/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -8,6 +11,6 @@
     "jsx": "react"
   },
   "include": [
-    "./app/**/*"
+    "./wwwroot/app/**/*"
   ]
 }
