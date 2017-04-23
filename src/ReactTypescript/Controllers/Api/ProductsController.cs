@@ -14,13 +14,15 @@ namespace ReactTypescript.Controllers.Api
         [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
+            var rnd = new Random();
+            var rndBool = new Random();
             var products = new List<Product>()
             {
-                new Product("iPhone6", 200, true),
-                new Product("iPhone7", 500, true),
-                new Product("Huawei", 150, true),
-                new Product("Samsung Galaxy S6", 400, true),
-                new Product("Motorola Razr", 255, true),
+                new Product("iPhone6", rnd.Next(1000), rndBool.Next(0,2)==0 ? false : true),
+                new Product("iPhone7", rnd.Next(1000), rndBool.Next(0,2)==0 ? false : true),
+                new Product("Huawei", rnd.Next(1000), rndBool.Next(0,2)==0 ? false : true),
+                new Product("Samsung Galaxy S6", rnd.Next(1000), rndBool.Next(0,2)==0 ? false : true),
+                new Product("Motorola Razr", rnd.Next(1000), rndBool.Next(0,2)==0 ? false : true),
             };
 
             return products;

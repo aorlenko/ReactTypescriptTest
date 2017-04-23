@@ -5,7 +5,7 @@
     "objectProperties": [ "ProductName", "ProductPrice", "InStock" ]
   },
   "position": {
-    "height": 600
+    "height": 400
   },
   "generalFeatures": {
     "manualRefresh": true,

@@ -12,7 +12,6 @@
     "@types/react-dom": "^0.14.23",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-    "superagent": "^3.5.2",
     "bootstrap": "3.3.7"
   },
   "devDependencies": {
