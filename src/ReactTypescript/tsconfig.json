@@ -5,7 +5,7 @@
     ],
     "outDir": "./wwwroot/dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "module": "commonjs",
     "target": "es6",
     "jsx": "react"

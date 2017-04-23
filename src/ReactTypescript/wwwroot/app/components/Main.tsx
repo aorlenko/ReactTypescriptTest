@@ -9,22 +9,41 @@ export class Main extends React.Component<any, any>{
         this.state = {
             settings: {
                 generalFeatures: {}
+            },
+            component2Settings: {
+                type:"chart"
             }
         }
     }
 
     componentDidMount() {
+        this.loadComponent1();
+        this.loadComponent2();
+    }
+
+    loadComponent1() {
         var xhr = new XMLHttpRequest();
         xhr.open('get', 'http://localhost:3798/components/grid.json', true);
         xhr.onload = function () {
             var data = JSON.parse(xhr.responseText);
 
             this.setState({
-                fullScreen: data.generalFeatures.fullScreen,
-                refresh: data.generalFeatures.manualRefresh,
                 settings: data
             });
 
+        }.bind(this);
+        xhr.send();
+    }
+
+    loadComponent2() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://localhost:3798/components/pieChart.json', true);
+        xhr.onload = function () {
+            var data = JSON.parse(xhr.responseText);
+
+            this.setState({
+                component2Settings: data
+            });
         }.bind(this);
         xhr.send();
     }
@@ -51,10 +70,18 @@ export class Main extends React.Component<any, any>{
                     </Container>
                 </div>
                 <div className="col-md-4">
-                    2
+                    <Container settings={this.state.component2Settings}>
+                        <CustomComponent settings={this.state.component2Settings} />
+                    </Container>
                 </div>
                 <div className="col-md-4">
-                    3
+                    <div className="panel panel-primary">
+                        <div className="panel-heading">&nbsp;
+                        </div>
+                        <div className="panel-body">
+                            3-rd component
+                        </div>
+                    </div>
                 </div>
             </div>
         )

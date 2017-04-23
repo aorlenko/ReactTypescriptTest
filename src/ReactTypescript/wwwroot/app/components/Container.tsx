@@ -7,15 +7,6 @@ export interface ContainerSettings extends React.Props<any> {
 }
 
 export class Container extends React.Component<any, undefined>{
-    constructor(props: ContainerSettings) {
-        super(props);
-        console.log(props);
-    }
-
-    onRefresh(e:any) {
-        e.preventDefault;
-        this.forceUpdate();
-    }
 
     render() {
         if (!this.props.settings || !this.props.settings.position) {
@@ -23,10 +14,10 @@ export class Container extends React.Component<any, undefined>{
         }
 
         let toolbarBtnCss = {
-            paddingRight: '5px',
+            paddingRight: '10px',
             cursor: 'pointer'
         };
-        console.log(this.props)
+
         let containerHeightCss = {
             height: this.props.settings.position.height + 'px'
         };

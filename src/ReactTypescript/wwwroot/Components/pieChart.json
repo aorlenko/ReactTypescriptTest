@@ -5,19 +5,19 @@
     "objectProperties": {
       "category": "Year",
       "value": "Value"
-    },
-    "position": {
-      "height": 400
-    },
-    "generalFeatures": {
-      "manualRefresh": true,
-      "fullScreen": true
-    },
-    "specialFeatures": {
-      "showLegend": true
-    },
-    "defaultSettings": {
-      "showLegend": true
     }
+  },
+  "position": {
+    "height": 400
+  },
+  "generalFeatures": {
+    "manualRefresh": false,
+    "fullScreen": true
+  },
+  "specialFeatures": {
+    "showLegend": true
+  },
+  "defaultSettings": {
+    "showLegend": true
   }
 }
