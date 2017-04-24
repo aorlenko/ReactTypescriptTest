@@ -1,5 +1,6 @@
 {
   "type": "pieChart",
+  "caption": "Profits by years",
   "dataSource": {
     "url": "http://localhost:3798/api/Profits",
     "objectProperties": {

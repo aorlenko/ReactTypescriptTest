@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ReactTypescript.Controllers.Api
@@ -14,6 +15,7 @@ namespace ReactTypescript.Controllers.Api
         [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
+            Thread.Sleep(1000);
             var rnd = new Random();
             var rndBool = new Random();
             var products = new List<Product>()

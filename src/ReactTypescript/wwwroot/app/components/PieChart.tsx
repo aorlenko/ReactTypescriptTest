@@ -18,7 +18,6 @@ export class PieChart extends React.Component<any, any>{
                         y: elem.value
                     };
                 });
-                //that.setState({ products: result })
 
                 that.chart = (window as any).Highcharts.chart('container', {
                     chart: {
@@ -28,7 +27,7 @@ export class PieChart extends React.Component<any, any>{
                         type: 'pie'
                     },
                     title: {
-                        text: 'Browser market shares January, 2015 to May, 2015'
+                        text: that.props.settings.caption
                     },
                     series: [{
                         name: 'Brands',

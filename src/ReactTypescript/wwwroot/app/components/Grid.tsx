@@ -22,7 +22,7 @@ class GridItems extends React.Component<any, any>{
 
 class GridHeader extends React.Component<any, any>{
     render() {
-        const headerItems = this.props.propertyNames.map((name: any, index:number) =>
+        const headerItems = this.props.propertyNames.map((name: any, index: number) =>
             <th key={index}>{name}</th>
         );
 
@@ -44,18 +44,21 @@ export class Grid extends React.Component<any, any> {
 
     componentDidMount() {
         if (!this.props.settings.dataSource) return;
-
         this.loadProducts();
     }
 
     loadProducts() {
+        this.setState({ isLoading: true });
         var that = this;
         var xhr = new XMLHttpRequest();
         xhr.open('get', this.props.settings.dataSource.url, true);
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var result = JSON.parse(this.responseText);
-                that.setState({ products: result })
+                that.setState({
+                    products: result,
+                    isLoading: false
+                })
             }
         };
 
@@ -69,14 +72,26 @@ export class Grid extends React.Component<any, any> {
     }
 
     render() {
+        let loadingProgress = null;
+        let grid = null;
+
+        if (this.state.isLoading)
+            loadingProgress = <div className="loader-parent"><div className="loader"></div></div>;
+        else
+            grid =
+                <table className="table">
+                    <caption>{this.props.settings.caption}</caption>
+                    <thead>
+                        <GridHeader propertyNames={this.props.settings.dataSource.objectProperties} />
+                    </thead>
+                    <GridItems products={this.state.products} />
+                </table>;
+
         return (
-            <table className="table">
-                <caption>Optional table caption.</caption>
-                <thead>
-                    <GridHeader propertyNames={this.props.settings.dataSource.objectProperties} />
-                </thead>
-                <GridItems products={this.state.products} />
-            </table>
+            <div>
+                {loadingProgress}
+                {grid}
+            </div>
         )
     }
 }

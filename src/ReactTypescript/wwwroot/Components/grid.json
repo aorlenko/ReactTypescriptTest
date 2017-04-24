@@ -1,5 +1,6 @@
 {
   "type": "grid",
+  "caption": "Products list",
   "dataSource": {
     "url": "http://localhost:3798/api/Products",
     "objectProperties": [ "ProductName", "ProductPrice", "InStock" ]

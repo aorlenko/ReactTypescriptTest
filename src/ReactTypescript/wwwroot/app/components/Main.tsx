@@ -7,7 +7,7 @@ export class Main extends React.Component<any, any>{
         super();
 
         this.state = {
-            settings: {
+            component1Settings: {
                 generalFeatures: {}
             },
             component2Settings: {
@@ -28,7 +28,7 @@ export class Main extends React.Component<any, any>{
             var data = JSON.parse(xhr.responseText);
 
             this.setState({
-                settings: data
+                component1Settings: data
             });
 
         }.bind(this);
@@ -60,11 +60,11 @@ export class Main extends React.Component<any, any>{
             <div className="row">
                 <div className="col-md-4">
                     <Container
-                        settings={this.state.settings}
+                        settings={this.state.component1Settings}
                         onRefreshCallback={this.onRefresh.bind(this)}>
 
                         <CustomComponent
-                            settings={this.state.settings}
+                            settings={this.state.component1Settings}
                             shouldRefresh={this.state.shouldRefresh} />
 
                     </Container>
