@@ -27,9 +27,11 @@ class GridHeader extends React.Component<any, any>{
         );
 
         return (
-            <tr>
-                {headerItems}
-            </tr>
+            <thead>
+                <tr>
+                    {headerItems}
+                </tr>
+            </thead>
         )
     }
 }
@@ -43,11 +45,12 @@ export class Grid extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        if (!this.props.settings.dataSource) return;
         this.loadProducts();
     }
 
     loadProducts() {
+        if (!this.props.settings.dataSource) return;
+
         this.setState({ isLoading: true });
         var that = this;
         var xhr = new XMLHttpRequest();
@@ -81,9 +84,7 @@ export class Grid extends React.Component<any, any> {
             grid =
                 <table className="table">
                     <caption>{this.props.settings.caption}</caption>
-                    <thead>
-                        <GridHeader propertyNames={this.props.settings.dataSource.objectProperties} />
-                    </thead>
+                    <GridHeader propertyNames={this.props.settings.dataSource.objectProperties} />
                     <GridItems products={this.state.products} />
                 </table>;
 

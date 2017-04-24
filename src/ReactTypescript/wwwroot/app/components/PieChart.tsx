@@ -4,7 +4,6 @@ export class PieChart extends React.Component<any, any>{
     chart: any;
 
     componentDidMount() {
-
         var that = this;
         var xhr = new XMLHttpRequest();
         xhr.open('get', this.props.settings.dataSource.url, true);
@@ -30,7 +29,7 @@ export class PieChart extends React.Component<any, any>{
                         text: that.props.settings.caption
                     },
                     series: [{
-                        name: 'Brands',
+                        name: 'Profit',
                         colorByPoint: true,
                         data: data
                     }]
@@ -39,11 +38,6 @@ export class PieChart extends React.Component<any, any>{
         };
 
         xhr.send();
-
-        //this.chart = new Highcharts[this.props.type || "Chart"](
-        //    this.props.container,
-        //    this.props.options
-        //);
     }
 
     render() {

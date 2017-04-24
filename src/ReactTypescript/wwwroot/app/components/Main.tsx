@@ -8,10 +8,8 @@ export class Main extends React.Component<any, any>{
 
         this.state = {
             component1Settings: {
-                generalFeatures: {}
             },
             component2Settings: {
-                type:"chart"
             }
         }
     }
