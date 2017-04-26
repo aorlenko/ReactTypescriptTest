@@ -3,5 +3,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
+    <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
   </PropertyGroup>
 </Project>

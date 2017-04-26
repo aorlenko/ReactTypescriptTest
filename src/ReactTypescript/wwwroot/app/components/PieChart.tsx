@@ -11,12 +11,10 @@ export class PieChart extends React.Component<any, any>{
             if (this.readyState == 4 && this.status == 200) {
                 var result = JSON.parse(this.responseText);
 
-                let data = result.map(function (elem) {
-                    return {
-                        name: elem.year,
-                        y: elem.value
-                    };
-                });
+                let data = result.map(elem => ({
+                    name: elem.year,
+                    y: elem.value
+                }));
 
                 that.chart = (window as any).Highcharts.chart('container', {
                     chart: {
@@ -29,7 +27,7 @@ export class PieChart extends React.Component<any, any>{
                         text: that.props.settings.caption
                     },
                     series: [{
-                        name: 'Profit',
+                        name: that.props.settings.seriesName,
                         colorByPoint: true,
                         data: data
                     }]

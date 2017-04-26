@@ -45,12 +45,15 @@ export class Grid extends React.Component<any, any> {
     }
 
     componentDidMount() {
+        if (!this.props.settings) return;
+
         this.loadProducts();
+
+        if(this.props.settings.defaultSettings.autoRefresh.enabled)
+            setInterval(this.loadProducts.bind(this), this.props.settings.defaultSettings.autoRefresh.interval*1000);
     }
 
     loadProducts() {
-        if (!this.props.settings.dataSource) return;
-
         this.setState({ isLoading: true });
         var that = this;
         var xhr = new XMLHttpRequest();
@@ -61,7 +64,7 @@ export class Grid extends React.Component<any, any> {
                 that.setState({
                     products: result,
                     isLoading: false
-                })
+                });
             }
         };
 
